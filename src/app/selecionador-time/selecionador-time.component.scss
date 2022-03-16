@@ -1,0 +1,26 @@
+.selecionador{
+  border: 1px solid #5E5E5E;
+  padding: 1.2em;
+}
+
+.logo-time:hover{
+  border: 0.5px solid #5E5E5E;
+}
+
+.carousel-control-prev{
+  width: unset;
+}
+
+.carousel-control-next{
+  width: unset;
+}
+
+span.carousel-control-prev-icon{
+  background-image: url(../../assets/img/left-arrow.png);
+  margin-right: 4em;
+}
+
+span.carousel-control-next-icon{
+  background-image: url(../../assets/img/right-arrow.png);
+  margin-left: 4em;
+}
