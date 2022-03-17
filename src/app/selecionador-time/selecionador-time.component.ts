@@ -6,4 +6,10 @@ import { Component } from "@angular/core";
   styleUrls: ['./selecionador-time.component.scss']
 })
 
-export class SelecionadorTimeComponent { }
+export class SelecionadorTimeComponent {
+
+  selecionarTime () {
+    console.log("Time selecionado");
+  }
+
+}

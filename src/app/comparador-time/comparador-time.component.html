@@ -1,11 +1,11 @@
 <div class="dropdown d-flex float-right">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button id="label_temporada" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       Temporada
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">2019</a>
-      <a class="dropdown-item" href="#">2020</a>
-      <a class="dropdown-item" href="#">2021</a>
+      <a class="dropdown-item" (click)="selecionaTemporada('2019')">2019</a>
+      <a class="dropdown-item" (click)="selecionaTemporada('2020')">2020</a>
+      <a class="dropdown-item" (click)="selecionaTemporada('2021')">2021</a>
     </div>
 </div>
 
@@ -31,10 +31,10 @@
                         <dd>XX</dd>
                         <dt>Vitórias</dt>
                         <dd>XX</dd>
-    
+
                         <dt>Empates</dt>
                         <dd>XX</dd>
-    
+
                         <dt>Derrotas</dt>
                         <dd>XX</dd>
                     </dl>
@@ -67,7 +67,7 @@
 
                             <dt>Empates</dt>
                             <dd>XX</dd>
-    
+
                             <dt>Derrotas</dt>
                             <dd>XX</dd>
                         </dl>
@@ -79,7 +79,7 @@
 </section>
 
 <div class="row divBtn">
-    <div class="col d-flex justify-content-center">
+    <div class="col d-flex justify-content-center" (click)="limpar()">
         <button type="button" class="btn btn-danger">Limpar</button>
     </div>
 </div>

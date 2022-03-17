@@ -1,6 +1,6 @@
 import { SelecionadorTimeComponent } from './selecionador-time/selecionador-time.component';
 import { ComparadorTimeComponent } from './comparador-time/comparador-time.component';
-import { NgModule } from '@angular/core';
+import { ApplicationModule, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
     SelecionadorTimeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ApplicationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
