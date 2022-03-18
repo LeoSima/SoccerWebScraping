@@ -11,24 +11,39 @@ export class SelecionadorTimeComponent {
 
   private numTime = 1;
 
-  public selecionarTime (img: string): void {
+  public selecionarTime (img: string, time: string): void {
 
     this.alternaTime();
 
-    var imgTemplate = `<img id="imgTime` + this.numTime + `" src="` + img + `" >`
+    var imgTemplate = `<img id="imgTime` + this.numTime + `" src="` + img + `" alt="` + time + `">`
 
     if(this.numTime == 2 && img == $('#imgTime1').attr('src')) {
 
-      console.error("Os times não podem ser iguais");
+      var errorTemplate = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                              Os times não podem ser iguais.
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>`;
+
+      $('#errorTimesIguais').append(errorTemplate);
+
       this.alternaTime();
 
     } else if ($('#imgTime' + this.numTime + '_div').find('img').length > 0) {
 
-      console.error("Apenas 2 times são permitidos");
+      var errorTemplate = `<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                              Apenas 2 times são permitidos.
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>`;
 
+      $('#errorQtdTimes').append(errorTemplate);
 
     } else {
 
+      $('#nomeTime' + this.numTime).text(time);
       $('#imgTime' + this.numTime + '_div').append(imgTemplate);
 
     }

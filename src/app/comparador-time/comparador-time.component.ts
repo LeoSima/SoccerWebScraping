@@ -10,8 +10,13 @@ import * as $ from 'jquery';
 export class ComparadorTimeComponent{
 
   limpar(){
+
+    $('#nomeTime1').text('');
+    $('#nomeTime2').text('');
+
     $('#imgTime1_div').find('img').remove();
     $('#imgTime2_div').find('img').remove();
+
   }
 
   selecionaTemporada (ano: string) {
