@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
+import * as $ from 'jquery';
 
 @Component({
   selector:'app-comparador-time',
@@ -9,10 +10,11 @@ import { Component, ViewChild, ElementRef, AfterViewInit } from "@angular/core";
 export class ComparadorTimeComponent{
 
   limpar(){
-    console.log("limpou");
+    $('#imgTime1').remove();
+    $('#imgTime2').remove();
   }
 
   selecionaTemporada (ano: string) {
-    console.log("Ano alterado")
+    $('#dropdownMenuButton').text(ano);
   }
 }
