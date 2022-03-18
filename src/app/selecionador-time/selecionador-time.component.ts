@@ -9,18 +9,42 @@ import * as $ from 'jquery';
 
 export class SelecionadorTimeComponent {
 
-  private alternadorTime = 1;
+  private numTime = 1;
 
-  selecionarTime (img: string) {
-    var imgTemplate = `<img id="imgTime` + this.alternadorTime + `" src="` + img + `" >`
+  public selecionarTime (img: string): void {
 
-    $('#imgTime' + this.alternadorTime + '_div').append(imgTemplate);
+    this.alternaTime();
 
-    if (this.alternadorTime == 1){
-      this.alternadorTime = 2;
-    } else if (this.alternadorTime == 2) {
-      this.alternadorTime = 1;
+    var imgTemplate = `<img id="imgTime` + this.numTime + `" src="` + img + `" >`
+
+    if(this.numTime == 2 && img == $('#imgTime1').attr('src')) {
+
+      console.error("Os times não podem ser iguais");
+      this.alternaTime();
+
+    } else if ($('#imgTime' + this.numTime + '_div').find('img').length > 0) {
+
+      console.error("Apenas 2 times são permitidos");
+
+
+    } else {
+
+      $('#imgTime' + this.numTime + '_div').append(imgTemplate);
+
     }
+
+  }
+
+  private alternaTime(): void {
+
+    if ($('#imgTime1_div').find('img').attr('src') == undefined || $('#imgTime1_div').find('img').attr('src') == null || $('#imgTime1_div').find('img').attr('src') == '') {
+      this.numTime = 1;
+    } else if (this.numTime == 1){
+      this.numTime = 2;
+    } else if (this.numTime == 2) {
+      this.numTime = 1;
+    }
+
   }
 
 }
