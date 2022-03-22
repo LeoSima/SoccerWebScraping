@@ -11,11 +11,22 @@ export class ComparadorTimeComponent{
 
   limpar(){
 
-    $('#nomeTime1').text('');
-    $('#nomeTime2').text('');
+    $('#nomeTime1').text('-');
+    $('#nomeTime2').text('-');
 
     $('#imgTime1_div').find('img').remove();
     $('#imgTime2_div').find('img').remove();
+
+    $('#sequenciaTime1').text('--');
+    $('#sequenciaTime2').text('--');
+    $('#jogosTime1').text('--');
+    $('#jogosTime2').text('--');
+    $('#vitoriasTime1').text('--');
+    $('#vitoriasTime2').text('--');
+    $('#empatesTime1').text('--');
+    $('#empatesTime2').text('--');
+    $('#derrotasTime1').text('--');
+    $('#derrotasTime2').text('--');
 
   }
 

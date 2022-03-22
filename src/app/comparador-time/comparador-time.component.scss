@@ -1,3 +1,13 @@
+#errorTimesIguais{
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#errorQtdTimes{
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 dl {
   display: grid;
   grid-template-columns: max-content auto;

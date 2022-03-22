@@ -11,7 +11,7 @@ export class SelecionadorTimeComponent {
 
   private numTime = 1;
 
-  public selecionarTime (img: string, time: string): void {
+  public selecionarTime (img: string, time: string, sequencia: string, jogos: number, vitorias: number, empates: number, derrotas: number): void {
 
     this.alternaTime();
 
@@ -26,7 +26,8 @@ export class SelecionadorTimeComponent {
                               </button>
                             </div>`;
 
-      $('#errorTimesIguais').append(errorTemplate);
+      if($('#errorTimesIguais').find('div').text() == '')
+        $('#errorTimesIguais').append(errorTemplate);
 
       this.alternaTime();
 
@@ -39,12 +40,18 @@ export class SelecionadorTimeComponent {
                               </button>
                             </div>`;
 
-      $('#errorQtdTimes').append(errorTemplate);
+      if($('#errorQtdTimes').find('div').text() == '')
+        $('#errorQtdTimes').append(errorTemplate);
 
     } else {
 
       $('#nomeTime' + this.numTime).text(time);
       $('#imgTime' + this.numTime + '_div').append(imgTemplate);
+      $('#sequenciaTime' + this.numTime).text(sequencia);
+      $('#jogosTime' + this.numTime).text(jogos);
+      $('#vitoriasTime' + this.numTime).text(vitorias);
+      $('#empatesTime' + this.numTime).text(empates);
+      $('#derrotasTime' + this.numTime).text(derrotas);
 
     }
 
